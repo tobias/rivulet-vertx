@@ -7,7 +7,7 @@
                  [org.clojure/clojurescript "0.0-1885"]
                  [enfocus "2.0.0-beta1"]]
   :source-paths ["src/clj"]
-  :resource-paths ["src/js" "src/rb" "target/resources"]
+  :resource-paths ["src/js" "src/rb"]
   :plugins [[lein-cljsbuild "0.3.2"]
             [lein-vertx "0.1.0-SNAPSHOT"]]
   :profiles {:provided
