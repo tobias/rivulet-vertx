@@ -1,9 +1,9 @@
 (ns rivulet.filter
   (:require [vertx.eventbus :as eb]))
 
-(defn- filter-stream [result-addr filter data]
+(defn- filter-stream [result-address filter data]
   (when (re-find (re-pattern filter) data)
-    (eb/publish result-addr [filter data])))
+    (eb/publish result-address [filter data])))
 
 (defn- remove-stream-filter [state filter]
   (when-let [handler-id (@state filter)]
@@ -25,3 +25,4 @@
   (let [state (atom {})]
     (eb/on-message command-address
                 (partial dispatch state stream-address result-address))))
+
